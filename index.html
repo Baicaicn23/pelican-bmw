@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鹈鹕开宝马 · Pelican × BMW</title>
+<style>
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(12px, 3vw, 40px);
+    background: #0a0813 radial-gradient(1200px 800px at 30% 10%, #1c1838 0%, #0a0813 55%, #07060f 100%);
+    font-family: -apple-system, "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  }
+  .stage {
+    width: min(1180px, 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .85), 0 0 0 1px rgba(255, 255, 255, .06);
+    animation: rise .8s ease-out both;
+  }
+  svg { display: block; width: 100%; height: auto; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="一只戴墨镜的鹈鹕开着蓝色宝马敞篷车在黄昏公路上兜风">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#101732"/>
+      <stop offset=".32" stop-color="#35336e"/>
+      <stop offset=".55" stop-color="#7a4f83"/>
+      <stop offset=".72" stop-color="#c96a6f"/>
+      <stop offset=".86" stop-color="#ff9d63"/>
+      <stop offset="1"   stop-color="#ffc47f"/>
+    </linearGradient>
+    <radialGradient id="sunGrad">
+      <stop offset="0"   stop-color="#fff8dd"/>
+      <stop offset=".45" stop-color="#ffd377"/>
+      <stop offset=".8"  stop-color="#ff9f52"/>
+      <stop offset="1"   stop-color="#ff9f52" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunGlow">
+      <stop offset="0"   stop-color="#ffc878" stop-opacity=".85"/>
+      <stop offset=".5"  stop-color="#ffa05a" stop-opacity=".32"/>
+      <stop offset="1"   stop-color="#ffa05a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#221a3a"/>
+      <stop offset="1" stop-color="#0e0a1c"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#8bb8f9"/>
+      <stop offset=".3"  stop-color="#3a70d8"/>
+      <stop offset=".62" stop-color="#1e47a4"/>
+      <stop offset="1"   stop-color="#10295f"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#ebf6ff" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#a0c3f0" stop-opacity=".75"/>
+      <stop offset="1"   stop-color="#78a0d7" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="pelicanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#ffffff"/>
+      <stop offset=".65" stop-color="#eef3fa"/>
+      <stop offset="1"   stop-color="#d8e0ee"/>
+    </linearGradient>
+    <linearGradient id="beakGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#ffcf63"/>
+      <stop offset=".55" stop-color="#f7ab2e"/>
+      <stop offset="1"   stop-color="#ec8f16"/>
+    </linearGradient>
+    <linearGradient id="pouchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#ffdd8e"/>
+      <stop offset=".5"  stop-color="#f9bc55"/>
+      <stop offset="1"   stop-color="#ee9c2d"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26263f"/>
+      <stop offset="1" stop-color="#0e0e19"/>
+    </linearGradient>
+    <linearGradient id="rimGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8edf6"/>
+      <stop offset="1" stop-color="#b3bfd2"/>
+    </linearGradient>
+    <radialGradient id="wellGrad">
+      <stop offset="0" stop-color="#0d1322"/>
+      <stop offset="1" stop-color="#060a14"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx=".5" cy=".45" r=".75">
+      <stop offset="0"   stop-color="#08060f" stop-opacity="0"/>
+      <stop offset=".72" stop-color="#08060f" stop-opacity="0"/>
+      <stop offset="1"   stop-color="#08060f" stop-opacity=".52"/>
+    </radialGradient>
+
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softBlur" x="-30%" y="-120%" width="160%" height="340%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+
+    <clipPath id="wellClip"><rect x="0" y="0" width="1200" height="607"/></clipPath>
+    <path id="bmwArc" d="M 781 500 A 14 14 0 0 1 809 500"/>
+  </defs>
+
+  <!-- 天空 -->
+  <rect width="1200" height="700" fill="url(#skyGrad)"/>
+
+  <!-- 星星 -->
+  <g fill="#fff">
+    <circle cx="120" cy="70" r="1.6" opacity=".7"><animate attributeName="opacity" values=".4;.85;.4" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="230" cy="118" r="1.3" opacity=".5"/>
+    <circle cx="342" cy="58" r="1.5" opacity=".6"><animate attributeName="opacity" values=".7;.3;.7" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="540" cy="88" r="1.2" opacity=".45"/>
+    <circle cx="82" cy="150" r="1.4" opacity=".5"/>
+    <circle cx="660" cy="62" r="1.3" opacity=".5"/>
+    <circle cx="905" cy="78" r="1.2" opacity=".4"/>
+  </g>
+
+  <!-- 落日 -->
+  <circle cx="1006" cy="336" r="150" fill="url(#sunGlow)">
+    <animate attributeName="opacity" values=".55;.85;.55" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1006" cy="336" r="52" fill="url(#sunGrad)"/>
+
+  <!-- 远处的鸟 -->
+  <g stroke="#2c2456" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".8">
+    <path d="M 418 168 q 8 -8 16 0 q 8 -8 16 0"/>
+    <path d="M 498 138 q 6 -6 13 0 q 6 -6 13 0"/>
+  </g>
+
+  <!-- 云（缓慢飘动，首尾相接循环） -->
+  <g opacity=".9">
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-1400 0" dur="120s" repeatCount="indefinite"/>
+    <g fill="#ffd7c2" opacity=".3">
+      <ellipse cx="216" cy="152" rx="58" ry="20"/>
+      <ellipse cx="256" cy="140" rx="44" ry="24"/>
+      <ellipse cx="302" cy="152" rx="50" ry="18"/>
+      <ellipse cx="256" cy="160" rx="70" ry="20"/>
+    </g>
+    <g fill="#ffd7c2" opacity=".22" transform="translate(492 -42) scale(.7)">
+      <ellipse cx="216" cy="152" rx="58" ry="20"/>
+      <ellipse cx="256" cy="140" rx="44" ry="24"/>
+      <ellipse cx="302" cy="152" rx="50" ry="18"/>
+      <ellipse cx="256" cy="160" rx="70" ry="20"/>
+    </g>
+    <g fill="#ffd7c2" opacity=".3" transform="translate(1400 0)">
+      <ellipse cx="216" cy="152" rx="58" ry="20"/>
+      <ellipse cx="256" cy="140" rx="44" ry="24"/>
+      <ellipse cx="302" cy="152" rx="50" ry="18"/>
+      <ellipse cx="256" cy="160" rx="70" ry="20"/>
+    </g>
+    <g fill="#ffd7c2" opacity=".22" transform="translate(1892 -42) scale(.7)">
+      <ellipse cx="216" cy="152" rx="58" ry="20"/>
+      <ellipse cx="256" cy="140" rx="44" ry="24"/>
+      <ellipse cx="302" cy="152" rx="50" ry="18"/>
+      <ellipse cx="256" cy="160" rx="70" ry="20"/>
+    </g>
+  </g>
+
+  <!-- 城市剪影 -->
+  <g fill="#221a44" opacity=".92">
+    <rect x="0"   y="548" width="64"  height="62"/>
+    <rect x="60"  y="566" width="84"  height="44"/>
+    <rect x="140" y="556" width="54"  height="54"/>
+    <rect x="196" y="574" width="70"  height="36"/>
+    <rect x="930" y="560" width="70"  height="50"/>
+    <rect x="995" y="548" width="58"  height="62"/>
+    <rect x="1048" y="568" width="64" height="42"/>
+    <rect x="1108" y="556" width="52" height="54"/>
+    <rect x="1156" y="572" width="44" height="38"/>
+  </g>
+  <g fill="#ffce8a" opacity=".6">
+    <rect x="76"  y="578" width="6" height="8"/>
+    <rect x="94"  y="592" width="6" height="8"/>
+    <rect x="1006" y="562" width="6" height="8"/>
+    <rect x="1022" y="580" width="6" height="8"/>
+    <rect x="1120" y="570" width="6" height="8"/>
+  </g>
+
+  <!-- 棕榈树剪影 -->
+  <g stroke="#17112e" stroke-linecap="round" fill="none">
+    <path d="M 144 612 C 150 545 138 505 158 432" stroke-width="14"/>
+    <path d="M 1080 612 C 1090 540 1075 495 1098 400" stroke-width="15"/>
+    <path d="M 1172 612 C 1176 560 1166 530 1180 484" stroke-width="10"/>
+  </g>
+  <g fill="#17112e">
+    <path d="M 158 432 C 130 430 100 414 82 392 C 108 400 138 412 160 428 Z"/>
+    <path d="M 158 432 C 132 444 100 442 78 428 C 106 424 136 424 160 430 Z"/>
+    <path d="M 158 432 C 160 402 176 378 198 366 C 190 392 176 414 162 432 Z"/>
+    <path d="M 158 432 C 186 418 214 420 232 436 C 204 436 176 438 158 434 Z"/>
+    <path d="M 158 432 C 146 406 146 382 158 360 C 162 388 164 412 160 430 Z"/>
+    <circle cx="156" cy="438" r="4"/><circle cx="164" cy="440" r="4"/>
+
+    <path d="M 1098 400 C 1060 396 1024 378 1004 356 C 1034 366 1072 382 1100 396 Z"/>
+    <path d="M 1098 400 C 1066 418 1028 414 1004 398 C 1036 394 1070 394 1100 398 Z"/>
+    <path d="M 1098 400 C 1102 366 1120 338 1146 324 C 1136 354 1118 380 1102 400 Z"/>
+    <path d="M 1098 400 C 1132 384 1164 386 1184 404 C 1152 404 1120 406 1098 402 Z"/>
+    <path d="M 1098 400 C 1084 372 1086 344 1100 320 C 1104 352 1106 378 1100 398 Z"/>
+    <circle cx="1096" cy="408" r="4.5"/><circle cx="1105" cy="410" r="4.5"/>
+
+    <path d="M 1180 484 C 1160 482 1142 472 1132 460 C 1148 466 1166 474 1181 482 Z"/>
+    <path d="M 1180 484 C 1166 494 1146 492 1134 484 C 1150 482 1166 482 1181 482 Z"/>
+    <path d="M 1180 484 C 1182 466 1192 450 1206 442 C 1200 458 1190 472 1182 484 Z"/>
+    <path d="M 1180 484 C 1198 476 1214 478 1224 486 C 1208 486 1192 487 1181 485 Z"/>
+  </g>
+
+  <!-- 公路 -->
+  <rect x="0" y="610" width="1200" height="90" fill="url(#roadGrad)"/>
+  <rect x="0" y="608" width="1200" height="5" fill="#40355f"/>
+  <path d="M 0 620 H 1200" stroke="#4b3f6b" stroke-width="3" opacity=".55"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-160 0" dur="0.6s" repeatCount="indefinite"/>
+    <path d="M -160 652 H 1360" stroke="#ecd49b" stroke-width="7" stroke-dasharray="88 72" opacity=".7"/>
+  </g>
+
+  <!-- 地面阴影 -->
+  <ellipse cx="600" cy="656" rx="352" ry="24" fill="#000" opacity=".3" filter="url(#softBlur)"/>
+  <ellipse cx="600" cy="662" rx="300" ry="12" fill="#000" opacity=".35" filter="url(#softBlur)"/>
+
+  <!-- 速度线 -->
+  <g fill="#ffddb0">
+    <rect x="64" y="420" width="120" height="5" rx="2.5" opacity=".2">
+      <animate attributeName="opacity" values=".1;.5;.1" dur="0.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -22 0; 0 0" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="30" y="462" width="92" height="5" rx="2.5" opacity=".15">
+      <animate attributeName="opacity" values=".05;.4;.05" dur="0.85s" begin="-0.25s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -16 0; 0 0" dur="0.7s" begin="-0.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="96" y="505" width="138" height="5" rx="2.5" opacity=".2">
+      <animate attributeName="opacity" values=".1;.45;.1" dur="0.95s" begin="-0.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -24 0; 0 0" dur="0.75s" begin="-0.4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="26" y="548" width="108" height="5" rx="2.5" opacity=".12">
+      <animate attributeName="opacity" values=".05;.35;.05" dur="1s" begin="-0.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -18 0; 0 0" dur="0.65s" begin="-0.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 尾气尘土 -->
+  <g>
+    <circle cx="316" cy="636" r="8" fill="#d8c6ae">
+      <animate attributeName="r" values="6;24;30" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".5;.22;0" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="282" cy="644" r="6" fill="#d8c6ae">
+      <animate attributeName="r" values="5;20;26" dur="1.4s" begin="-0.45s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".45;.18;0" dur="1.4s" begin="-0.45s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="252" cy="650" r="5" fill="#d8c6ae">
+      <animate attributeName="r" values="4;16;22" dur="1.4s" begin="-0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".4;.15;0" dur="1.4s" begin="-0.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ======= 汽车 + 鹈鹕 ======= -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0"
+                      dur="1.5s" repeatCount="indefinite" calcMode="spline"
+                      keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+    <!-- 车身 -->
+    <path d="M 250 540 Q 250 506 284 493 Q 322 477 386 471 L 470 469 L 738 468 Q 800 469 872 486
+             Q 918 496 934 514 L 936 550 Q 938 590 902 606 L 302 610 Q 254 610 250 598 Z"
+          fill="url(#bodyGrad)" stroke="#0c1a38" stroke-width="1.5" stroke-opacity=".6"/>
+
+    <!-- 车身细节 -->
+    <path d="M 330 520 Q 520 500 700 506 Q 800 510 878 524" stroke="#d7e8ff" stroke-width="5"
+          fill="none" stroke-linecap="round" opacity=".16"/>
+    <path d="M 320 548 Q 520 526 720 530 Q 830 534 902 552" stroke="#0a1c40" stroke-width="2.5"
+          fill="none" opacity=".5"/>
+    <path d="M 756 474 Q 812 480 868 496" stroke="#cfe2ff" stroke-width="2.5"
+          fill="none" opacity=".3" stroke-linecap="round"/>
+    <path d="M 318 487 Q 378 478 438 474" stroke="#e8effa" stroke-width="2.5"
+          fill="none" opacity=".3" stroke-linecap="round"/>
+    <path d="M 450 467 L 744 465" stroke="#d9e4f4" stroke-width="3" fill="none" opacity=".5" stroke-linecap="round"/>
+
+    <!-- 车门与把手 -->
+    <path d="M 470 470 C 466 512 465 560 468 598" stroke="#0b1c3d" stroke-width="2" fill="none" opacity=".65"/>
+    <rect x="498" y="484" width="30" height="8" rx="4" fill="#d3deee" stroke="#8b9cb8"/>
+
+    <!-- 尾灯 / 大灯 -->
+    <rect x="251" y="496" width="8" height="30" rx="4" fill="#ff4c60" filter="url(#glow)"/>
+    <path d="M 886 492 Q 912 496 918 508 Q 902 512 886 505 Z" fill="#fff3c1" filter="url(#glow)"/>
+
+    <!-- 后视镜 -->
+    <path d="M 734 452 L 744 445" stroke="#0b1c3d" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="750" cy="441" rx="13" ry="9" transform="rotate(-16 750 441)" fill="#2f66c9" stroke="#0b1c3d" stroke-width="2"/>
+    <path d="M 742 438 Q 748 434 755 436" stroke="#d9e8ff" stroke-width="2" opacity=".6" fill="none" stroke-linecap="round"/>
+
+    <!-- M 三色条纹 -->
+    <g transform="translate(858 528) rotate(-6)">
+      <rect width="8.5" height="32" rx="2" fill="#57a9e0" stroke="#eaf2ff" stroke-opacity=".55"/>
+      <rect x="11.5" width="8.5" height="32" rx="2" fill="#2b3f96" stroke="#eaf2ff" stroke-opacity=".55"/>
+      <rect x="23" width="8.5" height="32" rx="2" fill="#e33c31" stroke="#eaf2ff" stroke-opacity=".55"/>
+    </g>
+
+    <!-- 排气管 -->
+    <rect x="238" y="584" width="30" height="11" rx="5.5" fill="#242b3d" stroke="#0a0f1c" stroke-width="1.5"/>
+    <rect x="242" y="587" width="22" height="5" rx="2.5" fill="#0a0f1c"/>
+
+    <!-- 车头：双肾格栅 + 白蓝圆标 -->
+    <ellipse cx="926" cy="536" rx="18" ry="31" transform="rotate(-5 926 536)" fill="#1b3767" stroke="#0a1730" stroke-width="2"/>
+    <g transform="rotate(-5 926 536)"><ellipse cx="921.5" cy="532" rx="4.2" ry="12" fill="#05070d" stroke="#d7e2f2" stroke-width="1.3"/><ellipse cx="932" cy="532" rx="4.2" ry="12" fill="#05070d" stroke="#d7e2f2" stroke-width="1.3"/></g>
+    <g>
+      <circle cx="795" cy="500" r="21" fill="#0c1018"/>
+      <path d="M 795 500 L 795 486 A 14 14 0 0 0 781 500 Z" fill="#1273d2"/>
+      <path d="M 795 500 L 795 486 A 14 14 0 0 1 809 500 Z" fill="#f4f7fc"/>
+      <path d="M 795 500 L 781 500 A 14 14 0 0 0 795 514 Z" fill="#f4f7fc"/>
+      <path d="M 795 500 L 809 500 A 14 14 0 0 1 795 514 Z" fill="#1273d2"/>
+      <text font-size="6.5" font-weight="700" letter-spacing="1" fill="#fff" font-family="Helvetica, Arial, sans-serif">
+        <textPath href="#bmwArc" startOffset="30%">BMW</textPath>
+      </text>
+    </g>
+
+    <!-- 轮拱阴影（裁切在车身底线以上） -->
+    <g clip-path="url(#wellClip)">
+      <circle cx="410" cy="598" r="78" fill="url(#wellGrad)"/>
+      <circle cx="410" cy="598" r="78" fill="none" stroke="#93a7c8" stroke-width="2.5" opacity=".5"/>
+      <circle cx="810" cy="598" r="78" fill="url(#wellGrad)"/>
+      <circle cx="810" cy="598" r="78" fill="none" stroke="#93a7c8" stroke-width="2.5" opacity=".5"/>
+    </g>
+
+    <!-- 后轮 -->
+    <g transform="translate(410 598)">
+      <circle r="62" fill="#15161d"/>
+      <circle r="62" fill="none" stroke="#242735" stroke-width="3" opacity=".8"/>
+      <circle r="55" fill="none" stroke="#1d2030" stroke-width="6" stroke-dasharray="14 16" opacity=".7"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.55s" repeatCount="indefinite"/>
+        <circle r="41" fill="url(#rimGrad)"/>
+        <circle r="36" fill="#9aa7bd"/>
+        <path d="M 8 0 L 36 0 M 6.5 4.7 L 29.2 21.2 M 2.5 7.6 L 11.1 34.2 M -2.5 7.6 L -11.1 34.2 M -6.5 4.7 L -29.2 21.2 M -8 0 L -36 0 M -6.5 -4.7 L -29.2 -21.2 M -2.5 -7.6 L -11.1 -34.2 M 2.5 -7.6 L 11.1 -34.2 M 6.5 -4.7 L 29.2 -21.2"
+              stroke="#dde5f1" stroke-width="5" stroke-linecap="round"/>
+        <circle r="10" fill="#0b0f17"/>
+        <path d="M 0 0 L 0 -7 A 7 7 0 0 0 -7 0 Z" fill="#1273d2"/>
+        <path d="M 0 0 L 0 -7 A 7 7 0 0 1 7 0 Z" fill="#fff"/>
+        <path d="M 0 0 L -7 0 A 7 7 0 0 0 0 7 Z" fill="#fff"/>
+        <path d="M 0 0 L 7 0 A 7 7 0 0 1 0 7 Z" fill="#1273d2"/>
+      </g>
+    </g>
+
+    <!-- 前轮 -->
+    <g transform="translate(810 598)">
+      <circle r="62" fill="#15161d"/>
+      <circle r="62" fill="none" stroke="#242735" stroke-width="3" opacity=".8"/>
+      <circle r="55" fill="none" stroke="#1d2030" stroke-width="6" stroke-dasharray="14 16" opacity=".7"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.55s" repeatCount="indefinite"/>
+        <circle r="41" fill="url(#rimGrad)"/>
+        <circle r="36" fill="#9aa7bd"/>
+        <path d="M 8 0 L 36 0 M 6.5 4.7 L 29.2 21.2 M 2.5 7.6 L 11.1 34.2 M -2.5 7.6 L -11.1 34.2 M -6.5 4.7 L -29.2 21.2 M -8 0 L -36 0 M -6.5 -4.7 L -29.2 -21.2 M -2.5 -7.6 L -11.1 -34.2 M 2.5 -7.6 L 11.1 -34.2 M 6.5 -4.7 L 29.2 -21.2"
+              stroke="#dde5f1" stroke-width="5" stroke-linecap="round"/>
+        <circle r="10" fill="#0b0f17"/>
+        <path d="M 0 0 L 0 -7 A 7 7 0 0 0 -7 0 Z" fill="#1273d2"/>
+        <path d="M 0 0 L 0 -7 A 7 7 0 0 1 7 0 Z" fill="#fff"/>
+        <path d="M 0 0 L -7 0 A 7 7 0 0 0 0 7 Z" fill="#fff"/>
+        <path d="M 0 0 L 7 0 A 7 7 0 0 1 0 7 Z" fill="#1273d2"/>
+      </g>
+    </g>
+
+    <!-- 座舱内部 -->
+    <rect x="448" y="448" width="302" height="22" rx="10" fill="#0f1a33"/>
+    <ellipse cx="700" cy="458" rx="38" ry="9" fill="#0c1730"/>
+    <rect x="452" y="380" width="56" height="80" rx="18" fill="#1c2b50" stroke="#0c1830" stroke-width="2.5"/>
+    <path d="M 470 394 V 448 M 490 394 V 448" stroke="#263a68" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 挡风玻璃 -->
+    <g>
+      <path d="M 686 374 L 712 374 L 744 462 L 702 462 Z" fill="url(#glassGrad)" opacity=".92"
+            stroke="#dcebff" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M 684 374 L 714 374" stroke="#0e1c38" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 694 384 L 706 428" stroke="#ffffff" stroke-width="3" opacity=".45" stroke-linecap="round"/>
+      <path d="M 708 390 L 716 416" stroke="#ffffff" stroke-width="2.5" opacity=".3" stroke-linecap="round"/>
+    </g>
+    <path d="M 700 462 L 748 462 L 744 468 L 704 468 Z" fill="#0c162c"/>
+
+    <!-- ======= 鹈鹕 ======= -->
+    <ellipse cx="578" cy="469" rx="96" ry="9" fill="#081128" opacity=".28"/>
+
+    <!-- 围巾飘带 -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="-3.5 568 350; 3.5 568 350; -3.5 568 350" dur="1.8s" repeatCount="indefinite"/>
+      <path d="M 562 356 C 526 352 502 364 472 358 C 482 382 522 392 560 378 Z" fill="#b7332b"/>
+      <path d="M 564 348 C 522 332 486 344 450 332 C 456 362 502 374 558 364 Z" fill="#e04a3e"/>
+    </g>
+
+    <!-- 身体 -->
+    <path d="M 500 468 C 496 412 528 378 574 377 C 618 376 642 404 645 445 L 646 468 Z" fill="url(#pelicanGrad)"/>
+
+    <!-- 脖子与头 -->
+    <path d="M 596 386 C 588 352 594 322 614 304" stroke="#f2f6fc" stroke-width="44" fill="none" stroke-linecap="round"/>
+    <ellipse cx="616" cy="288" rx="44" ry="38" transform="rotate(-8 616 288)" fill="url(#pelicanGrad)"/>
+    <path d="M 592 260 C 580 258 570 251 564 240 C 576 241 586 248 594 254 Z" fill="#e9eff8"/>
+    <path d="M 602 254 C 592 248 585 239 582 228 C 592 234 599 242 604 249 Z" fill="#dfe7f2"/>
+
+    <!-- 大嘴与喉囊 -->
+    <path d="M 648 266 L 872 318 Q 884 326 872 334 L 654 312 Q 642 290 648 266 Z"
+          fill="url(#beakGrad)" stroke="#de8a1a" stroke-width="1" stroke-opacity=".4"/>
+    <path d="M 664 280 q 12 3 24 6" stroke="#d97f14" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round"/>
+    <path d="M 654 312 L 872 334 C 844 372 786 390 726 382 C 690 377 662 352 654 312 Z"
+          fill="url(#pouchGrad)" stroke="#db8b1e" stroke-width="1.5" stroke-opacity=".45"/>
+    <path d="M 680 340 Q 716 370 772 368" stroke="#e09a2a" stroke-width="2" fill="none" opacity=".45" stroke-linecap="round"/>
+    <path d="M 668 326 Q 700 352 744 356" stroke="#e09a2a" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round"/>
+
+    <!-- 嘴里露出的小鱼尾巴 -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+                        values="-6 872 330; 6 872 330; -6 872 330" dur="0.9s" repeatCount="indefinite"/>
+      <path d="M 872 330 C 878 326 886 328 892 336 C 884 338 876 336 872 330 Z" fill="#b9cfe8" stroke="#7f9ab8" stroke-width="1.2"/>
+      <path d="M 872 334 C 880 332 888 336 894 344 C 886 344 876 340 872 334 Z" fill="#a5bedb" stroke="#7f9ab8" stroke-width="1.2"/>
+    </g>
+
+    <!-- 墨镜 -->
+    <g>
+      <path d="M 612 276 L 580 268" stroke="#e2b45f" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="610" y="272" width="42" height="24" rx="10" transform="rotate(-6 631 284)"
+            fill="url(#lensGrad)" stroke="#e2b45f" stroke-width="2.5"/>
+      <path d="M 617 279 L 627 276" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+      <path d="M 632 289 L 640 287" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+    </g>
+
+    <!-- 围巾 -->
+    <path d="M 570 350 Q 600 336 632 350" stroke="#e04a3e" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M 572 356 Q 600 344 630 356" stroke="#b7332b" stroke-width="4" stroke-linecap="round" fill="none" opacity=".6"/>
+    <circle cx="568" cy="350" r="8" fill="#c93c33"/>
+
+    <!-- 方向盘 -->
+    <path d="M 662 462 L 648 474" stroke="#10182b" stroke-width="7" stroke-linecap="round"/>
+    <g transform="rotate(-14 662 436)">
+      <ellipse cx="662" cy="436" rx="19" ry="26" fill="none" stroke="#141a2e" stroke-width="6"/>
+      <path d="M 643 436 H 681 M 662 412 V 460" stroke="#141a2e" stroke-width="4"/>
+      <circle cx="662" cy="436" r="5.5" fill="#2b3452"/>
+    </g>
+
+    <!-- 搭在方向盘上的翅膀 -->
+    <g>
+      <path d="M 594 400 C 622 390 648 398 668 414 C 662 430 638 438 614 432 C 598 428 588 412 594 400 Z"
+            fill="#f7fafe" stroke="#d9e2f0" stroke-width="1.5"/>
+      <path d="M 610 412 Q 626 410 640 416 M 606 422 Q 624 422 640 426" stroke="#c8d4e6" stroke-width="2"
+            fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 标题 -->
+  <g font-family="-apple-system, PingFang SC, Helvetica Neue, Arial, sans-serif">
+    <g transform="translate(40 44)">
+      <rect width="7" height="18" rx="1" fill="#57a9e0"/>
+      <rect x="10" width="7" height="18" rx="1" fill="#2b3f96"/>
+      <rect x="20" width="7" height="18" rx="1" fill="#e33c31"/>
+    </g>
+    <text x="40" y="92" font-size="11" letter-spacing="4" fill="#cbb6ef" opacity=".75">PELICAN DRIVING CLUB</text>
+    <text x="38" y="126" font-size="27" font-weight="600" letter-spacing="3" fill="#fff3dd">鹈鹕开宝马</text>
+    <text x="40" y="148" font-size="12" letter-spacing="2" fill="#e8d8ff" opacity=".65">BMW 敞篷 · 黄昏兜风</text>
+  </g>
+
+  <rect width="1200" height="700" fill="url(#vignette)" pointer-events="none"/>
+</svg>
+</div>
+</body>
+</html>
